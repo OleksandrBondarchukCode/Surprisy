@@ -29,12 +29,6 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* підсвітка контуру */
 }
 
-       .panel-1 {
-         top: 68%;
-         left: 15%;
-         width: 13.5%;
-         height: 10%;
-       }
 
        .panel-2 {
          top: 68%;
@@ -53,30 +47,17 @@
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openCollectionPage()"></div>
 <div class="panel panel-2" onclick="alert('Панель 2')"></div>
 <div class="panel panel-3" onclick="alert('Панель 3')"></div>
 
 <script>
-      function openCollectionPage() {
-        window.location.href = 'Collection.html';
-      }
-            function openMyHistoryPage() {
-        window.location.href = 'MyHistory.html';
-      }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        document.body.style.backgroundImage = "url('images/HomePage.png')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundRepeat = "no-repeat";
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.style.backgroundImage = "url('images/MyHistory.png')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
 
-        const panel1 = document.querySelector('.panel-1');
-        panel1.addEventListener('click', openCollectionPage);
-
-        const panel2 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openMyHistoryPage);
-      });
 </script>
 
 </body>
