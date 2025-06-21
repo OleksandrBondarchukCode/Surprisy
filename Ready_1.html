@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Home Collection</title>
+    <title>Ready_1</title>
     <style>
         *{
          margin: 0;
@@ -43,22 +43,17 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* підсвітка контуру */
 }
 
-       .panel-1 {
-         top: 68%;
-         left: 15%;
-         width: 13.5%;
-         height: 10%;
-       }
 
-       .panel-2 {
-         top: 68%;
-         left: 75.6%;
+
+       .panel-1 {
+         top: 88%;
+         left: 77.5%;
          width: 13.2%;
          height: 10%;
        }
                 .custom-image {
             position: absolute;
-            width: 150px; /* змінюй розмір тут */
+            width: 350px; /* змінюй розмір тут */
             height: auto; /* або за потреби встанови фіксовану висоту */
         }
 
@@ -75,11 +70,10 @@
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openReady_1Page">Готові</div>
-<div class="panel panel-2" onclick="openSketches_1Page">Ескізи</div>
+<div class="panel panel-1" onclick="openReady_2Page">Вперед</div>
 
-<img src="images/Home_ Ready_Picture.jpg" alt="Зображення 1" class="custom-image image-1">
-<img src="images/Home_Scetches_Picture.jpg" alt="Зображення 2" class="custom-image image-2">
+<img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image image-1">
+<img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image image-2">
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -88,11 +82,8 @@
       document.body.style.backgroundPosition = "center";
       document.body.style.backgroundRepeat = "no-repeat";
 
-      const panel1 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openReady_1Page);
-
-        const panel2 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openSketches_1Page);
+        const panel1 = document.querySelector('.panel-1');
+        panel1.addEventListener('click', openReady_2Page);
     });
 </script>
 
