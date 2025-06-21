@@ -50,9 +50,7 @@
          height: 10%;
        }
 
-
-
-       .panel-3 {
+       .panel-2 {
          top: 68%;
          left: 75.6%;
          width: 13.2%;
@@ -62,8 +60,8 @@
 </head>
 <body>
 
-<div class="panel panel-1" onclick="alert('Панель 1')">Готові</div>
-<div class="panel panel-3" onclick="alert('Панель 3')">Ескізи</div>
+<div class="panel panel-1" onclick="openReadyPage">Готові</div>
+<div class="panel panel-2" onclick="openSketchesPage">Ескізи</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -71,6 +69,12 @@
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundPosition = "center";
       document.body.style.backgroundRepeat = "no-repeat";
+
+      const panel1 = document.querySelector('.panel-2');
+        panel2.addEventListener('click', openReadyPage);
+
+        const panel2 = document.querySelector('.panel-2');
+        panel2.addEventListener('click', openSketchesPage);
     });
 </script>
 

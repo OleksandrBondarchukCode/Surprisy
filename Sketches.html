@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .panel {
+            position: absolute;
+            background-color: transparent;
+            border-style: none;
+            transition: border-color 0.3s ease, border-style 0.3s ease;
+            cursor: pointer;
+        }
+
+        .panel:hover {
+            border-color: rgba(255, 182, 193, 0.8);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .panel-1 {
+            top: 68%;
+            left: 30.4%;
+            width: 13.5%;
+            height: 10%;
+        }
+
+        .panel-2 {
+            top: 68%;
+            left: 45.6%;
+            width: 13.2%;
+            height: 10%;
+        }
+
+        .custom-image {
+            position: absolute;
+            width: 150px; /* змінюй розмір тут */
+            height: auto; /* або за потреби встанови фіксовану висоту */
+        }
+
+        .image-1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        .image-2 {
+            top: 10%;
+            left: 70%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Панелі -->
+<div class="panel panel-1" onclick="alert('Панель 1')"></div>
+<div class="panel panel-2" onclick="alert('Панель 2')"></div>
+
+<!-- Зображення -->
+<img src="images/image1.png" alt="Зображення 1" class="custom-image image-1">
+<img src="images/image2.png" alt="Зображення 2" class="custom-image image-2">
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.backgroundImage = "url('images/MyHistory.png')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+    });
+</script>
+
+</body>
+</html>
