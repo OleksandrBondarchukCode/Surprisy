@@ -2,50 +2,58 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Resources</title>
+    <title>Ready_1</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+       }
 
-        body {
-            height: 100vh;
-            font-family: sans-serif;
-            position: relative;
-        }
+       body {
+         height: 100vh;
+         font-family: sans-serif;
+         position: relative;
+       }
 
-        .panel {
+.panel {
+  position: absolute;
+  background-color: transparent;
+  border-style: none;
+  transition: border-color 0.3s ease, border-style 0.3s ease;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.5vw; /* адаптивний розмір шрифту */
+  color: #5a3e36; /* м’який коричневий як у зображенні */
+  font-weight: bold;
+  text-align: center;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.panel:hover {
+  border-color: rgba(255, 182, 193, 0.8); /* видно контур при наведенні */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* підсвітка контуру */
+}
+
+
+
+       .panel-1 {
+         top: 88%;
+         left: 77.5%;
+         width: 13.2%;
+         height: 10%;
+       }
+                .custom-image {
             position: absolute;
-            background-color: transparent;
-            border-style: none;
-            transition: border-color 0.3s ease, border-style 0.3s ease;
-            cursor: pointer;
-        }
-
-        .panel:hover {
-            border-color: rgba(255, 182, 193, 0.8);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        }
-
-        .panel-1 {
-            top: 68%;
-            left: 30.4%;
-            width: 13.5%;
-            height: 10%;
-        }
-
-        .panel-2 {
-            top: 68%;
-            left: 45.6%;
-            width: 13.2%;
-            height: 10%;
-        }
-
-        .custom-image {
-            position: absolute;
-            width: 150px; /* змінюй розмір тут */
+            width: 350px; /* змінюй розмір тут */
             height: auto; /* або за потреби встанови фіксовану висоту */
         }
 
@@ -62,20 +70,20 @@
 </head>
 <body>
 
-<!-- Панелі -->
-<div class="panel panel-1" onclick="alert('Панель 1')"></div>
-<div class="panel panel-2" onclick="alert('Панель 2')"></div>
+<div class="panel panel-1" onclick="openReady_2Page">Вперед</div>
 
-<!-- Зображення -->
-<img src="images/image1.png" alt="Зображення 1" class="custom-image image-1">
-<img src="images/image2.png" alt="Зображення 2" class="custom-image image-2">
+<img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image image-1">
+<img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image image-2">
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        document.body.style.backgroundImage = "url('images/MyHistory.png')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundImage = "url('images/collection.png')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+
+        const panel1 = document.querySelector('.panel-1');
+        panel1.addEventListener('click', openReady_2Page);
     });
 </script>
 

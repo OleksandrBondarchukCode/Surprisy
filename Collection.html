@@ -78,22 +78,28 @@
 <div class="panel panel-1" onclick="openReady_1Page">Готові</div>
 <div class="panel panel-2" onclick="openSketches_1Page">Ескізи</div>
 
-<img src="images/Home_ Ready_Picture.jpg" alt="Зображення 1" class="custom-image image-1">
-<img src="images/Home_Scetches_Picture.jpg" alt="Зображення 2" class="custom-image image-2">
+<img src="images/Home_Ready_Picture.jpg" alt="Зображення 1" class="custom-image image-1">
+<img src="images/Home_Sketches_Picture.jpg" alt="Зображення 2" class="custom-image image-2">
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.style.backgroundImage = "url('images/Collection.png')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundRepeat = "no-repeat";
+    function openReady_1Page() {
+       window.location.href = 'Ready_1.html';
+     }
+      function openSketches_1Page() {
+        window.location.href = 'Sketches_1.html';
+      }
+   document.addEventListener("DOMContentLoaded", function () {
+     document.body.style.backgroundImage = "url('images/Collection.png')";
+     document.body.style.backgroundSize = "cover";
+     document.body.style.backgroundPosition = "center";
+     document.body.style.backgroundRepeat = "no-repeat";
 
-      const panel1 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openReady_1Page);
+     const panel1 = document.querySelector('.panel-1');
+       panel1.addEventListener('click', openReady_1Page);
 
-        const panel2 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openSketches_1Page);
-    });
+       const panel2 = document.querySelector('.panel-2');
+       panel2.addEventListener('click', openSketches_1Page);
+   });
 </script>
 
 </body>
