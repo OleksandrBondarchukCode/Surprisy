@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Home Collection</title>
+    <title>Ready_3</title>
     <style>
         * {
             margin: 0;
@@ -73,6 +73,11 @@
             width: 300px;
             height: auto;
         }
+        .custom-image_1 {
+            position: absolute;
+            width: 300px;
+            height: auto;
+        }
 
         .image-1 {
             top: 10%;
@@ -87,27 +92,26 @@
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openCollectionPage()">Назад</div>
-<div class="panel panel-2" onclick="openReady_2Page()">Вперед</div>
+<div class="panel panel-1" onclick="openReady_2Page()">Назад</div>
+<div class="panel panel-2" onclick="openReady_4Page()">Вперед</div>
 
-<img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image image-1">
-<img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image image-2">
+<img src="images/photo_ready_5.jpg" alt="Зображення 1" class="custom-image_1 image-1">
+<img src="images/photo_ready_6.jpg" alt="Зображення 2" class="custom-image image-2">
 
 <script>
-    function openCollectionPage() {
-        window.location.href = 'Collection.html';
-    }
-
     function openReady_2Page() {
         window.location.href = 'Ready_2.html';
+    }
+  function openReady_4Page() {
+        window.location.href = 'Ready_4.html';
     }
 
     document.addEventListener("DOMContentLoaded", function () {
         const panel1 = document.querySelector('.panel-1');
-        panel1.addEventListener('click', openCollectionPage);
+        panel1.addEventListener('click', openReady2Page);
 
         const panel2 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openReady_2Page);
+        panel2.addEventListener('click', openReady_4Page);
     });
 </script>
 
