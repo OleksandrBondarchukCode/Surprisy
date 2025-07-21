@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Ready_1</title>
+    <title>Sketches_1</title>
     <style>
         *{
          margin: 0;
@@ -51,6 +51,12 @@
          width: 13.2%;
          height: 10%;
        }
+       .panel-2 {
+         top: 88%;
+         left: 7.5%;
+         width: 13.2%;
+         height: 10%;
+       }
                 .custom-image {
             position: absolute;
             width: 350px; /* змінюй розмір тут */
@@ -71,11 +77,19 @@
 <body>
 
 <div class="panel panel-1" onclick="openReady_2Page">Вперед</div>
+<div class="panel panel-2" onclick="openCollectionPage">Назад</div>
 
 <img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image image-1">
 <img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image image-2">
 
 <script>
+    function openSketches_2Page() {
+      window.location.href = 'Sketches_2.html';
+    }
+    function openCollectionPage(){
+    window.location.href = 'Collection.html';
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       document.body.style.backgroundImage = "url('images/Collection.png')";
       document.body.style.backgroundSize = "cover";
@@ -84,6 +98,9 @@
 
         const panel1 = document.querySelector('.panel-1');
         panel1.addEventListener('click', openReady_2Page);
+
+        const panel2 = document.querySelector('.panel-2');
+        panel2.addEventListener('click', openCollectionPage);
     });
 </script>
 
