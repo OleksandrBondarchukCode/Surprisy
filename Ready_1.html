@@ -15,6 +15,7 @@
             font-family: sans-serif;
             position: relative;
 
+            /* Оновлений багатошаровий фон */
             background:
                 radial-gradient(circle at 25% 25%, rgba(180, 140, 110, 0.05), transparent 60%),
                 radial-gradient(circle at 75% 70%, rgba(100, 80, 60, 0.04), transparent 60%),
@@ -45,7 +46,7 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px); /* легкий розмитий ефект */
         }
 
         .panel:hover {
@@ -53,73 +54,58 @@
             box-shadow: 0 0 12px rgba(255, 235, 215, 0.6);
         }
 
-        .panel-1 {
-            top: 68%;
-            left: 15%;
-            width: 13.5%;
-            height: 10%;
-        }
+.panel-1 {
+    top: 90%;
+    left: 1%;
+    width: 60px;
+    height: 60px;
+    font-size: 3vw; /* більша стрілка */
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0;
+}
 
-        .panel-2 {
-            top: 68%;
-            left: 75.6%;
-            width: 13.2%;
-            height: 10%;
-        }
+.panel-2 {
+    top: 90%;
+    left: 95%;
+    width: 60px;
+    height: 60px;
+    font-size: 3vw; /* більша стрілка */
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0;
+}
 
-        .custom-image {
+
+        .custom-image_1 {
             position: absolute;
-            max-width: 20vw;
-            width: 100%;
+            width: 400px;
+            height: auto;
+        }
+         .custom-image_2 {
+            position: absolute;
+            width: 525px;
             height: auto;
         }
 
         .image-1 {
-            top: 10%;
-            left: 10%;
+            top: 5%;
+            left: 5%;
         }
 
         .image-2 {
-            top: 10%;
-            left: 70%;
-        }
-
-
-        @media (max-width: 768px) {
-            .custom-image {
-                max-width: 45vw;
-            }
-
-            .image-1 {
-                top: 5%;
-                left: 5%;
-            }
-
-            .image-2 {
-                top: 5%;
-                left: 50%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .custom-image {
-                max-width: 80vw;
-            }
-
-            .image-1, .image-2 {
-                top: 5%;
-                left: 10%;
-            }
+            top: 5%;
+            left: 60%;
         }
     </style>
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openCollectionPage()">Назад</div>
-<div class="panel panel-2" onclick="openReady_2Page()">Вперед</div>
+<div class="panel panel-1" onclick="openCollectionPage()">←</div>
+<div class="panel panel-2" onclick="openReady_2Page()">→</div>
 
-<img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image image-1">
-<img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image image-2">
+<img src="images/photo_1.jpg" alt="Зображення 1" class="custom-image_1 image-1">
+<img src="images/photo_2.jpg" alt="Зображення 2" class="custom-image_2 image-2">
 
 <script>
     function openCollectionPage() {
@@ -131,8 +117,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector('.panel-1').addEventListener('click', openCollectionPage);
-        document.querySelector('.panel-2').addEventListener('click', openReady_2Page);
+        const panel1 = document.querySelector('.panel-1');
+        panel1.addEventListener('click', openCollectionPage);
+
+        const panel2 = document.querySelector('.panel-2');
+        panel2.addEventListener('click', openReady_2Page);
     });
 </script>
 
