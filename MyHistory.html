@@ -30,33 +30,84 @@
 }
 
 
-       .panel-2 {
-         top: 68%;
-         left: 30.4%;
-         width: 13.5%;
-         height: 10%;
-       }
+.panel-1 {
+    top: 100%;
+    left: 1%;
+    width: 60px;
+    height: 60px;
+    font-size: 3vw; /* більша стрілка */
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0;
+}
 
-       .panel-3 {
-         top: 68%;
-         left: 45.6%;
-         width: 13.2%;
-         height: 10%;
-       }
+.panel-2 {
+    top: 100%;
+    left: 95%;
+    width: 60px;
+    height: 60px;
+    font-size: 3vw; /* більша стрілка */
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0;
+}
+                .text-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            color: #3d2e26;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .text-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #5a3e36;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="panel panel-2" onclick="alert('Панель 2')"></div>
-<div class="panel panel-3" onclick="alert('Панель 3')"></div>
+<div class="panel panel-1" onclick="openHomePage">←</div>
+<div class="panel panel-2" onclick="alert('Панель 2')">→</div>
 
+<div class="text-container">
+    <h1>Моя історія</h1>
+    <p>Зима 2019 року стала для мене початком нового шляху — саме тоді я вперше взялася за малювання. Все почалося зі звичайного скетчбука, у який я просто від душі наносила перші лінії. Це було цікаво і захопливо, хоча тоді я й не думала, що цей простий відпочинок переросте у щось більше — у спосіб вираження себе і поглиблене занурення у власний світ, де кожна лінія несе емоцію і сенс. Мій перший малюнок, хоч і був досить хаотичним, став символом початку моєї творчої подорожі, відкривши двері у світ, який досі не перестає мене дивувати.</p>
+
+    <p>Натхнення я завжди знаходила в людях, які створюють щось своїми руками, вкладаючи в це частину душі. Спостерігати, як з простих штрихів народжується ціла картина, немов магія, спонукає мене рухатися вперед, вчитися і розвиватися. Перші кроки в малюванні були простою цікавістю — я хотіла зрозуміти, як з’являються образи на папері. Проте з часом це перетворилося на щось більше — на спосіб відпочити і знайти спокій у повсякденному житті, часто з чашкою кави в руках і улюбленою музикою на фоні.</p>
+
+    <p>Мій стиль малювання за цей час значно змінився і досі змінюється. Якщо спершу це були прості начерки в скетчбуці, то тепер я працюю на планшеті, що відкриває нові можливості для експериментів з кольором і деталями. Найважливіше для мене — це анатомія, кольори та стиль, які створюють єдність у кожній роботі. Та найбільше я ціную емоції, які вкладаю у кожен штрих, адже малюнок повинен передавати настрій і викликати почуття, а не просто бути красивою картинкою.</p>
+
+    <p>Однак, як і в будь-якій творчості, не обходиться без криз. Іноді натхнення зникає, і малювання стає тягарем, тоді я намагаюся змінити рутину: переглядаю улюблені фільми, виходжу на прогулянку або просто спілкуюся з близькими. Ці прості дії допомагають мені відновити сили і повернути бажання творити.</p>
+</div>
 <script>
+    function openHomePage() {
+          window.location.href = 'index.html';
+      }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.style.backgroundImage = "url('images/MyHistory.png')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundRepeat = "no-repeat";
+      function openMyHistory_1Page() {
+          window.location.href = 'MyHistory_1.html';
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.backgroundImage = "url('images/MyHistory.png')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+
+          const panel1 = document.querySelector('.panel-1');
+          panel1.addEventListener('click', openHomePage);
+
+          const panel2 = document.querySelector('.panel-2');
+          panel2.addEventListener('click', openMyHistory_1Page);
+      });
+
 
 </script>
 

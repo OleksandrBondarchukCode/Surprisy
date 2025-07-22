@@ -4,60 +4,84 @@
     <meta charset="UTF-8">
     <title>Resources</title>
     <style>
-        *{
-         margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-       }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-       body {
-         height: 100vh;
-         font-family: sans-serif;
-         position: relative;
-       }
+        body {
+            height: 100vh;
+            font-family: sans-serif;
+            position: relative;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(180, 140, 110, 0.05), transparent 60%),
+                radial-gradient(circle at 75% 70%, rgba(100, 80, 60, 0.04), transparent 60%),
+                radial-gradient(circle at 50% 50%, rgba(255, 245, 230, 0.4), transparent 80%),
+                linear-gradient(to bottom right, #fdf6ec, #f8ebd4);
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
- .panel {
-  position: absolute;
-  background-color: transparent;
-  border-style: none; /* спочатку без бордера */
-  transition: border-color 0.3s ease, border-style 0.3s ease;
-  cursor: pointer;
-}
+        .panel {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(150, 115, 100, 0.4);
+            border-radius: 10px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #5a3e36;
+            font-weight: bold;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
 
-.panel:hover {
-  border-color: rgba(255, 182, 193, 0.8); /* видно контур при наведенні */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* підсвітка контуру */
-}
+        .panel:hover {
+            border-color: rgba(120, 90, 75, 0.8);
+            box-shadow: 0 0 12px rgba(255, 235, 215, 0.6);
+        }
 
+        .panel-1 { top: 90%; left: 1%; width: 60px; height: 60px; font-size: 2rem; border-radius: 50%; }
 
-       .panel-2 {
-         top: 68%;
-         left: 30.4%;
-         width: 13.5%;
-         height: 10%;
-       }
+        /* Панельки соцмереж */
+        .social-panel {
+            width: 180px;
+            height: 60px;
+        }
 
-       .panel-3 {
-         top: 68%;
-         left: 45.6%;
-         width: 13.2%;
-         height: 10%;
-       }
+        .social-1 { top: 20%; left: 10%; }
+        .social-2 { top: 35%; left: 10%; }
+        .social-3 { top: 50%; left: 10%; }
+        .social-4 { top: 65%; left: 10%; }
     </style>
 </head>
 <body>
 
-<div class="panel panel-2" onclick="alert('Панель 2')"></div>
-<div class="panel panel-3" onclick="alert('Панель 3')"></div>
+<!-- Стрілка назад -->
+<div class="panel panel-1" onclick="openHomePage()">←</div>
+
+<!-- Панелі соцмереж -->
+<div class="panel social-panel social-1" onclick="window.open('https://www.instagram.com/solene.leclair/', '_blank')">Instagram</div>
+<div class="panel social-panel social-2" onclick="window.open('https://www.tiktok.com/@__yoshik0', '_blank')">TikTok</div>
+<div class="panel social-panel social-3" onclick="window.open('https://www.youtube.com/', '_blank')">Telegram Bot</div>
+<div class="panel social-panel social-4" onclick="window.open('https://t.me/', '_blank')">Telegram</div>
 
 <script>
+    function openHomePage() {
+        window.location.href = 'index.html';
+    }
 
     document.addEventListener("DOMContentLoaded", function () {
-      document.body.style.backgroundImage = "url('images/Resources.png')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundRepeat = "no-repeat";
-
+        document.body.style.backgroundImage = "url('images/Resources.png')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+    });
 </script>
 
 </body>

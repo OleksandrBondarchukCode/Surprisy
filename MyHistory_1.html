@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>MyHistory</title>
+    <style>
+        *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+       }
+
+       body {
+         height: 100vh;
+         font-family: sans-serif;
+         position: relative;
+       }
+
+ .panel {
+  position: absolute;
+  background-color: transparent;
+  border-style: none; /* спочатку без бордера */
+  transition: border-color 0.3s ease, border-style 0.3s ease;
+  cursor: pointer;
+}
+
+.panel:hover {
+  border-color: rgba(255, 182, 193, 0.8); /* видно контур при наведенні */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* підсвітка контуру */
+}
+
+
+.panel-1 {
+    top: 98%;
+    left: 1%;
+    width: 60px;
+    height: 60px;
+    font-size: 3vw; /* більша стрілка */
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0;
+}
+
+                .text-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            color: #3d2e26;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .text-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #5a3e36;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="panel panel-1" onclick="openMyHistoryPage">←</div>
+
+<div class="text-container">
+    <p>Важливу роль у моєму творчому житті відіграє підтримка близьких. Мама була поруч із самого початку і завжди мене підтримувала, навіть якщо не завжди розуміла глибину мого захоплення. Решта родини ставилася до мого хобі по-різному: дехто нейтрально, дехто з певним скептицизмом. Але це ніколи не зупиняло мене, бо я знала — це моє життя і моє покликання. Серед друзів також траплялися різні реакції, але ті, хто справді мене підтримував, стали справжньою опорою. Хоча вчителів і наставників у мене не було, я шукала приклади серед інших художників, які надихали і давали сили йти вперед.</p>
+
+    <p>Сьогодні малювання — це частина мене, спосіб виразити свої думки і почуття, спосіб подивитися на світ інакше. Хоча я малюю не так часто, як хотілося б, кожна нова робота — це маленька перемога і крок уперед. Я мрію продовжувати вчитися і розвиватися, можливо, колись створити власний артбук або комікс. Хоч плани після школи ще не остаточно сформовані, я знаю точно — мистецтво завжди залишатиметься у моєму житті, чи як професія, чи як спосіб самовираження.</p>
+
+    <p>Якби не було малювання, відчувала б, що втрачаю частину себе. Воно дає мені сенс, радість і допомагає бачити світ яскравіше і глибше. Якби я могла звернутися до себе шестирічної давності, я порадила б не боятися пробувати, не боятися помилок і завжди шукати свій шлях.</p>
+
+    <p>Вірю, що попереду мене чекають цікаві відкриття, і я з нетерпінням чекаю на свій творчий шлях, сповнений натхнення і нових звершень.</p>
+</div>
+<script>
+    function openMyHistoryPage() {
+          window.location.href = 'MyHistory.html';
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.backgroundImage = "url('images/MyHistory.png')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+
+          const panel1 = document.querySelector('.panel-1');
+          panel1.addEventListener('click', openMyHistoryPage);
+      });
+
+
+</script>
+
+</body>
+</html>
