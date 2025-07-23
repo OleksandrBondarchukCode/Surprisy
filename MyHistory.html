@@ -141,8 +141,8 @@
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openHomePage">←</div>
-<div class="panel panel-2" onclick="alert('Панель 2')">→</div>
+<div class="panel panel-1" onclick="openHomePage()">←</div>
+<div class="panel panel-2" onclick="openMyHistory_1Page()">→</div>
 
 <div class="text-container">
     <h1>Моя історія</h1>
@@ -170,11 +170,20 @@
             <ul class="submenu" id="readySubmenu">
                 <li><a href="Ready_1.html">Сторінка 1</a></li>
                 <li><a href="Ready_2.html">Сторінка 2</a></li>
+                <li><a href="Ready_3.html">Сторінка 3</a></li>
+                <li><a href="Ready_4.html">Сторінка 4</a></li>
+                <li><a href="Ready_5.html">Сторінка 5</a></li>
+                <li><a href="Ready_6.html">Сторінка 6</a></li>
+                <li><a href="Ready_7.html">Сторінка 7</a></li>
+                <li><a href="Ready_8.html">Сторінка 8</a></li>
+                <li><a href="Ready_9.html">Сторінка 9</a></li>
+                <li><a href="Ready_10.html">Сторінка 10</a></li>
             </ul>
             <li onclick="toggleSubmenu('sketchSubmenu')">Ескізи <span class="arrow">⮟</span></li>
             <ul class="submenu" id="sketchSubmenu">
-                <li><a href="Sketches_1.html">Сторінка 3</a></li>
-                <li><a href="Sketches_2.html">Сторінка 4</a></li>
+                <li><a href="Sketches_1.html">Сторінка 1</a></li>
+                <li><a href="Sketches_2.html">Сторінка 2</a></li>
+
             </ul>
         </ul>
         <li><a href="MyHistory.html">Про мене</a></li>
@@ -185,6 +194,10 @@
     function openHomePage() {
      window.location.href = 'index.html';
    }
+    function openMyHistory_1Page() {
+     window.location.href = 'MyHistory_1.html';
+   }
+
 
    function toggleMenu() {
      const menu = document.getElementById("burgerMenu");
