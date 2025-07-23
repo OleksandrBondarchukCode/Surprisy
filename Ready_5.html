@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ready_5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
         * {
             margin: 0;
@@ -14,8 +15,6 @@
             height: 100vh;
             font-family: sans-serif;
             position: relative;
-
-            /* Оновлений багатошаровий фон */
             background:
                 radial-gradient(circle at 25% 25%, rgba(180, 140, 110, 0.05), transparent 60%),
                 radial-gradient(circle at 75% 70%, rgba(100, 80, 60, 0.04), transparent 60%),
@@ -26,6 +25,7 @@
             background-size: cover;
         }
 
+        /* Панелі стрілок */
         .panel {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.15);
@@ -33,20 +33,17 @@
             border-radius: 10px;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 2.5vw;
             color: #5a3e36;
             font-weight: bold;
             text-align: center;
-
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            backdrop-filter: blur(2px); /* легкий розмитий ефект */
+            backdrop-filter: blur(2px);
         }
 
         .panel:hover {
@@ -54,73 +51,229 @@
             box-shadow: 0 0 12px rgba(255, 235, 215, 0.6);
         }
 
-.panel-1 {
-    top: 90%;
-    left: 1%;
-    width: 60px;
-    height: 60px;
-    font-size: 3vw; /* більша стрілка */
-    line-height: 1;
-    border-radius: 50%;
-    padding: 0;
-}
-
-.panel-2 {
-    top: 90%;
-    left: 95%;
-    width: 60px;
-    height: 60px;
-    font-size: 3vw; /* більша стрілка */
-    line-height: 1;
-    border-radius: 50%;
-}
-
-        .custom-image {
-            position: absolute;
-            width: 300px;
-            height: auto;
+        .panel-1 {
+            top: 90%;
+            left: 1%;
+            width: 60px;
+            height: 60px;
+            font-size: 3vw;
+            line-height: 1;
+            border-radius: 50%;
+            padding: 0;
         }
+
+        .panel-2 {
+            top: 90%;
+            left: 95%;
+            width: 60px;
+            height: 60px;
+            font-size: 3vw;
+            line-height: 1;
+            border-radius: 50%;
+            padding: 0;
+        }
+
         .custom-image_1 {
             position: absolute;
-            width: 500px;
+            width: 400px;
+            height: auto;
+        }
+
+        .custom-image_2 {
+            position: absolute;
+            width: 525px;
             height: auto;
         }
 
         .image-1 {
-            top: 10%;
-            left: 10%;
+            top: 5%;
+            left: 5%;
         }
 
         .image-2 {
-            top: 10%;
-            left: 70%;
+            top: 5%;
+            left: 60%;
         }
+
+       .burger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hidden {
+  display: none;
+}
+
+
+        .burger div {
+            width: 30px;
+            height: 4px;
+            background-color: #5a3e36;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .menu {
+  right: -300px;
+  left: auto;
+}
+.menu.open {
+  right: 0;
+  left: auto;
+}
+
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 15px;
+        }
+
+        .submenu.open {
+            display: block;
+        }
+
+        .arrow {
+            float: right;
+            font-size: 14px;
+        }
+
+        a {
+            color: #5a3e36;
+            text-decoration: none;
+            display: block;
+        }
+  html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  position: relative;
+
+}
+
     </style>
 </head>
 <body>
 
-<div class="panel panel-1" onclick="openReady_4Page()">←</div>
-<div class="panel panel-2" onclick="openReady_6Page()">→</div>
+<!-- Стрілки -->
+<div class="panel panel-1" onclick="openCollectionPage()">←</div>
+<div class="panel panel-2" onclick="openReady_2Page()">→</div>
 
+<!-- Зображення -->
 <img src="images/photo_ready_9.jpg" alt="Зображення 1" class="custom-image_1 image-1">
-<img src="images/photo_ready_10.jpg" alt="Зображення 2" class="custom-image image-2">
+<img src="images/photo_ready_10.jpg" alt="Зображення 2" class="custom-image_2 image-2">
 
+<!-- 🍔 Бургер -->
+<div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- 📋 Меню -->
+<nav class="menu" id="burgerMenu">
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li onclick="toggleSubmenu('gallerySubmenu')">Галерея <span class="arrow">⮟</span></li>
+        <ul class="submenu" id="gallerySubmenu">
+            <li onclick="toggleSubmenu('readySubmenu')">Готові <span class="arrow">⮟</span></li>
+            <ul class="submenu" id="readySubmenu">
+                <li><a href="Ready_1.html">Сторінка 1</a></li>
+                <li><a href="Ready_2.html">Сторінка 2</a></li>
+                <li><a href="Ready_3.html">Сторінка 3</a></li>
+                <li><a href="Ready_4.html">Сторінка 4</a></li>
+                <li><a href="Ready_5.html">Сторінка 5</a></li>
+                <li><a href="Ready_6.html">Сторінка 6</a></li>
+                <li><a href="Ready_7.html">Сторінка 7</a></li>
+                <li><a href="Ready_8.html">Сторінка 8</a></li>
+                <li><a href="Ready_9.html">Сторінка 9</a></li>
+                <li><a href="Ready_10.html">Сторінка 10</a></li>
+            </ul>
+            <li onclick="toggleSubmenu('sketchSubmenu')">Ескізи <span class="arrow">⮟</span></li>
+            <ul class="submenu" id="sketchSubmenu">
+                <li><a href="Sketches_1.html">Сторінка 1</a></li>
+                <li><a href="Sketches_2.html">Сторінка 2</a></li>
+            </ul>
+        </ul>
+        <li><a href="MyHistory.html">Про мене</a></li>
+        <li><a href="Resources.html">Ресурси</a></li>
+    </ul>
+</nav>
+
+
+<!-- JS -->
 <script>
     function openReady_4Page() {
-        window.location.href = 'Ready_4.html';
+      window.location.href = 'Ready_4.html';
     }
-  function openReady_6Page() {
-        window.location.href = 'Ready_6.html';
+
+    function openReady_6Page() {
+      window.location.href = 'Ready_6.html';
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("burgerMenu");
+      const burger = document.querySelector(".burger");
+      menu.classList.toggle("open");
+      burger.classList.toggle("hidden");
+    }
+
+    function toggleSubmenu(id) {
+      document.getElementById(id).classList.toggle("open");
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        const panel1 = document.querySelector('.panel-1');
-        panel1.addEventListener('click', openReady_1Page);
+      document.querySelector('.panel-1').addEventListener('click', openCollectionPage);
+      document.querySelector('.panel-2').addEventListener('click', openReady_2Page);
 
-        const panel2 = document.querySelector('.panel-2');
-        panel2.addEventListener('click', openReady_3Page);
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("burgerMenu");
+        const burger = document.querySelector(".burger");
+
+        if (
+          menu.classList.contains("open") &&
+          !menu.contains(event.target) &&
+          !burger.contains(event.target)
+        ) {
+          menu.classList.remove("open");
+          burger.classList.remove("hidden");
+        }
+      });
     });
 </script>
+
 
 </body>
 </html>

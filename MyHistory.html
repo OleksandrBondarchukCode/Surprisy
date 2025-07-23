@@ -69,6 +69,73 @@
             font-size: 2rem;
             color: #5a3e36;
         }
+  .burger {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+          z-index: 1001;
+        }
+
+        .burger div {
+          width: 30px;
+          height: 4px;
+          background-color: #5a3e36;
+          margin: 6px 0;
+          transition: 0.4s;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -300px;
+          width: 250px;
+          height: 100vh;
+          background: rgba(255, 255, 255, 0.95);
+          box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+          transition: right 0.3s ease;
+          padding: 20px;
+          overflow-y: auto;
+          z-index: 1000;
+        }
+
+        .menu.open {
+          right: 0;
+        }
+
+        .menu ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .menu li {
+          margin: 10px 0;
+          cursor: pointer;
+        }
+
+        .submenu {
+          display: none;
+          padding-left: 15px;
+        }
+
+        .submenu.open {
+          display: block;
+        }
+
+        .arrow {
+          float: right;
+          font-size: 14px;
+        }
+
+        a {
+          color: #5a3e36;
+          text-decoration: none;
+          display: block;
+        }
 
     </style>
 </head>
@@ -87,29 +154,69 @@
 
     <p>Однак, як і в будь-якій творчості, не обходиться без криз. Іноді натхнення зникає, і малювання стає тягарем, тоді я намагаюся змінити рутину: переглядаю улюблені фільми, виходжу на прогулянку або просто спілкуюся з близькими. Ці прості дії допомагають мені відновити сили і повернути бажання творити.</p>
 </div>
+<div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- 📋 Меню -->
+<nav class="menu" id="burgerMenu">
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li onclick="toggleSubmenu('gallerySubmenu')">Галерея <span class="arrow">⮟</span></li>
+        <ul class="submenu" id="gallerySubmenu">
+            <li onclick="toggleSubmenu('readySubmenu')">Готові <span class="arrow">⮟</span></li>
+            <ul class="submenu" id="readySubmenu">
+                <li><a href="Ready_1.html">Сторінка 1</a></li>
+                <li><a href="Ready_2.html">Сторінка 2</a></li>
+            </ul>
+            <li onclick="toggleSubmenu('sketchSubmenu')">Ескізи <span class="arrow">⮟</span></li>
+            <ul class="submenu" id="sketchSubmenu">
+                <li><a href="Sketches_1.html">Сторінка 3</a></li>
+                <li><a href="Sketches_2.html">Сторінка 4</a></li>
+            </ul>
+        </ul>
+        <li><a href="MyHistory.html">Про мене</a></li>
+        <li><a href="Resources.html">Ресурси</a></li>
+    </ul>
+</nav>
 <script>
     function openHomePage() {
-          window.location.href = 'index.html';
-      }
+     window.location.href = 'index.html';
+   }
 
-      function openMyHistory_1Page() {
-          window.location.href = 'MyHistory_1.html';
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        document.body.style.backgroundImage = "url('images/MyHistory.png')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundRepeat = "no-repeat";
+   function toggleMenu() {
+     const menu = document.getElementById("burgerMenu");
+     const burger = document.querySelector(".burger");
+     menu.classList.toggle("open");
+     burger.classList.toggle("hidden");
+   }
 
-          const panel1 = document.querySelector('.panel-1');
-          panel1.addEventListener('click', openHomePage);
+   function toggleSubmenu(id) {
+     document.getElementById(id).classList.toggle("open");
+   }
 
-          const panel2 = document.querySelector('.panel-2');
-          panel2.addEventListener('click', openMyHistory_1Page);
-      });
+   document.addEventListener("DOMContentLoaded", function () {
+     document.body.style.backgroundImage = "url('images/MyHistory.png')";
+     document.body.style.backgroundSize = "cover";
+     document.body.style.backgroundPosition = "center";
+     document.body.style.backgroundRepeat = "no-repeat";
 
+     document.addEventListener("click", function (event) {
+       const menu = document.getElementById("burgerMenu");
+       const burger = document.querySelector(".burger");
 
+       if (
+         menu.classList.contains("open") &&
+         !menu.contains(event.target) &&
+         !burger.contains(event.target)
+       ) {
+         menu.classList.remove("open");
+         burger.classList.remove("hidden");
+       }
+     });
+   });
 </script>
-
 </body>
 </html>

@@ -5,147 +5,130 @@
     <title>Resources</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
 
-        body {
-            height: 100vh;
-            font-family: sans-serif;
-            position: relative;
-            background:
-                radial-gradient(circle at 25% 25%, rgba(180, 140, 110, 0.05), transparent 60%),
-                radial-gradient(circle at 75% 70%, rgba(100, 80, 60, 0.04), transparent 60%),
-                radial-gradient(circle at 50% 50%, rgba(255, 245, 230, 0.4), transparent 80%),
-                linear-gradient(to bottom right, #fdf6ec, #f8ebd4);
-            background-blend-mode: multiply;
-            background-repeat: no-repeat;
-            background-size: cover;
+        html, body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          overflow-x: hidden;
+          height: 100vh;
+          min-height: 100vh;
+          font-family: sans-serif;
+          position: relative;
         }
 
         .panel {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(150, 115, 100, 0.4);
-            border-radius: 10px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #5a3e36;
-            font-weight: bold;
-            text-align: center;
-            backdrop-filter: blur(2px);
+          position: absolute;
+          background-color: rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(150, 115, 100, 0.4);
+          border-radius: 10px;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          color: #5a3e36;
+          font-weight: bold;
+          text-align: center;
+          backdrop-filter: blur(2px);
         }
 
         .panel:hover {
-            border-color: rgba(120, 90, 75, 0.8);
-            box-shadow: 0 0 12px rgba(255, 235, 215, 0.6);
+          border-color: rgba(120, 90, 75, 0.8);
+          box-shadow: 0 0 12px rgba(255, 235, 215, 0.6);
         }
 
-        .panel-1 { top: 90%; left: 1%; width: 60px; height: 60px; font-size: 2rem; border-radius: 50%; }
+        .panel-1 {
+          top: 90%;
+          left: 1%;
+          width: 60px;
+          height: 60px;
+          font-size: 2rem;
+          border-radius: 50%;
+        }
 
-        /* Панельки соцмереж */
         .social-panel {
-            width: 180px;
-            height: 60px;
+          width: 180px;
+          height: 60px;
         }
 
         .social-1 { top: 20%; left: 10%; }
         .social-2 { top: 35%; left: 10%; }
         .social-3 { top: 50%; left: 10%; }
         .social-4 { top: 65%; left: 10%; }
-               .burger {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1001;
-}
-.hidden {
-  display: none;
-}
 
+        .burger {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+          z-index: 1001;
+        }
 
         .burger div {
-            width: 30px;
-            height: 4px;
-            background-color: #5a3e36;
-            margin: 6px 0;
-            transition: 0.4s;
+          width: 30px;
+          height: 4px;
+          background-color: #5a3e36;
+          margin: 6px 0;
+          transition: 0.4s;
+        }
+
+        .hidden {
+          display: none;
         }
 
         .menu {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 250px;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            transition: left 0.3s ease;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-            z-index: 1000;
+          position: fixed;
+          top: 0;
+          right: -300px;
+          width: 250px;
+          height: 100vh;
+          background: rgba(255, 255, 255, 0.95);
+          box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+          transition: right 0.3s ease;
+          padding: 20px;
+          overflow-y: auto;
+          z-index: 1000;
         }
 
-        .menu {
-  right: -300px;
-  left: auto;
-}
-.menu.open {
-  right: 0;
-  left: auto;
-}
-
+        .menu.open {
+          right: 0;
+        }
 
         .menu ul {
-            list-style: none;
-            padding: 0;
+          list-style: none;
+          padding: 0;
         }
 
         .menu li {
-            margin: 10px 0;
-            cursor: pointer;
+          margin: 10px 0;
+          cursor: pointer;
         }
 
         .submenu {
-            display: none;
-            padding-left: 15px;
+          display: none;
+          padding-left: 15px;
         }
 
         .submenu.open {
-            display: block;
+          display: block;
         }
 
         .arrow {
-            float: right;
-            font-size: 14px;
+          float: right;
+          font-size: 14px;
         }
 
         a {
-            color: #5a3e36;
-            text-decoration: none;
-            display: block;
+          color: #5a3e36;
+          text-decoration: none;
+          display: block;
         }
-  html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
-  font-family: sans-serif;
-  position: relative;
-  /* фон і все інше залишаемо */
-}
-
     </style>
 </head>
 <body>
@@ -158,6 +141,7 @@ body {
 <div class="panel social-panel social-2" onclick="window.open('https://www.tiktok.com/@__yoshik0', '_blank')">TikTok</div>
 <div class="panel social-panel social-3" onclick="window.open('https://www.youtube.com/', '_blank')">Telegram Bot</div>
 <div class="panel social-panel social-4" onclick="window.open('https://t.me/', '_blank')">Telegram</div>
+
 <!-- 🍔 Бургер -->
 <div class="burger" onclick="toggleMenu()">
     <div></div>
@@ -182,22 +166,17 @@ body {
                 <li><a href="Sketches_2.html">Сторінка 4</a></li>
             </ul>
         </ul>
-        <li><a href="About.html">Про мене</a></li>
+        <li><a href="MyHistory.html">Про мене</a></li>
         <li><a href="Resources.html">Ресурси</a></li>
     </ul>
 </nav>
 
 <script>
     function openHomePage() {
-        window.location.href = 'index.html';
+      window.location.href = 'index.html';
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        document.body.style.backgroundImage = "url('images/Resources.png')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundRepeat = "no-repeat";
-        function toggleMenu() {
+    function toggleMenu() {
       const menu = document.getElementById("burgerMenu");
       const burger = document.querySelector(".burger");
       menu.classList.toggle("open");
@@ -209,8 +188,10 @@ body {
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-      document.querySelector('.panel-1').addEventListener('click', openCollectionPage);
-      document.querySelector('.panel-2').addEventListener('click', openReady_2Page);
+      document.body.style.backgroundImage = "url('images/Resources.png')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
 
       document.addEventListener("click", function (event) {
         const menu = document.getElementById("burgerMenu");
@@ -225,7 +206,6 @@ body {
           burger.classList.remove("hidden");
         }
       });
-    });
     });
 </script>
 

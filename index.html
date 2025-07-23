@@ -168,7 +168,7 @@ body {
                 <li><a href="Sketches_2.html">Сторінка 4</a></li>
             </ul>
         </ul>
-        <li><a href="About.html">Про мене</a></li>
+        <li><a href="MyHistory.html">Про мене</a></li>
         <li><a href="Resources.html">Ресурси</a></li>
     </ul>
 </nav>
@@ -199,6 +199,32 @@ body {
         const panel3 = document.querySelector('.panel-3');
         panel3.addEventListener('click', openResourcesPage);
       });
+</script>
+<script>
+    function toggleMenu() {
+      const menu = document.getElementById("burgerMenu");
+      const burger = document.querySelector(".burger");
+      menu.classList.toggle("open");
+      burger.classList.toggle("hidden");
+    }
+
+    function toggleSubmenu(id) {
+      document.getElementById(id).classList.toggle("open");
+    }
+
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("burgerMenu");
+      const burger = document.querySelector(".burger");
+
+      if (
+        menu.classList.contains("open") &&
+        !menu.contains(event.target) &&
+        !burger.contains(event.target)
+      ) {
+        menu.classList.remove("open");
+        burger.classList.remove("hidden");
+      }
+    });
 </script>
 
 </body>
