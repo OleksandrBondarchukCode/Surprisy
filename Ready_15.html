@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Ready_10</title>
+    <title>Ready_15</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
         * {
@@ -61,16 +61,6 @@
             border-radius: 50%;
             padding: 0;
         }
-        .panel-2 {
-            top: 90%;
-            left: 95%;
-            width: 60px;
-            height: 60px;
-            font-size: 3vw;
-            line-height: 1;
-            border-radius: 50%;
-            padding: 0;
-        }
 
 
         .custom-image_1 {
@@ -81,18 +71,18 @@
 
         .custom-image_2 {
             position: absolute;
-            width: 325px;
+            width: 405px;
             height: auto;
         }
 
         .image-1 {
             top: 5%;
-            left: 5%;
+            left: 10%;
         }
 
         .image-2 {
-            top: 2.5%;
-            left: 65%;
+            top: 5%;
+            left: 60%;
         }
 
        .burger {
@@ -188,12 +178,11 @@ body {
 <body>
 
 <!-- Стрілки -->
-<div class="panel panel-1" onclick="openReady_9Page()">←</div>
-<div class="panel panel-2" onclick="openReady_11Page()">→</div>
+<div class="panel panel-1" onclick="openReady_14Page()">←</div>
 
 <!-- Зображення -->
-<img src="images/photo_ready_19.jpg" alt="Зображення 1" class="custom-image_1 image-1">
-<img src="images/photo_ready_20.jpg" alt="Зображення 2" class="custom-image_2 image-2">
+<img src="images/photo_ready_29.jpg" alt="Зображення 1" class="custom-image_1 image-1">
+<img src="images/photo_ready_30.png" alt="Зображення 2" class="custom-image_2 image-2">
 
 <!-- 🍔 Бургер -->
 <div class="burger" onclick="toggleMenu()">
@@ -240,12 +229,11 @@ body {
 
 <!-- JS -->
 <script>
-    function openReady_9Page() {
-      window.location.href = 'Ready_9.html';
+    function openReady_14Page() {
+      window.location.href = 'Ready_14.html';
     }
-        function openReady_11Page() {
-      window.location.href = 'Ready_11.html';
-    }
+
+
     function toggleMenu() {
       const menu = document.getElementById("burgerMenu");
       const burger = document.querySelector(".burger");
